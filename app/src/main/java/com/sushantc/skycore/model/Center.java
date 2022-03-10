@@ -3,11 +3,18 @@ package com.sushantc.skycore.model;
 
 import android.os.Parcelable;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 
 public class Center implements Parcelable
 {
 
+    @SerializedName("longitude")
+    @Expose
     private Float longitude;
+    @SerializedName("latitude")
+    @Expose
     private Float latitude;
     public final static Creator<Center> CREATOR = new Creator<Center>() {
 

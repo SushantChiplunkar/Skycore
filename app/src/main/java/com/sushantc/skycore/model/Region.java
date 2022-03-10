@@ -3,10 +3,15 @@ package com.sushantc.skycore.model;
 
 import android.os.Parcelable;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 
 public class Region implements Parcelable
 {
 
+    @SerializedName("center")
+    @Expose
     private Center center;
     public final static Creator<Region> CREATOR = new Creator<Region>() {
 

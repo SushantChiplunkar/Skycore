@@ -3,11 +3,18 @@ package com.sushantc.skycore.model;
 
 import android.os.Parcelable;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 
 public class Category implements Parcelable
 {
 
+    @SerializedName("alias")
+    @Expose
     private String alias;
+    @SerializedName("title")
+    @Expose
     private String title;
     public final static Creator<Category> CREATOR = new Creator<Category>() {
 

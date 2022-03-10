@@ -9,12 +9,15 @@ import retrofit2.http.QueryName;
 
 public interface APIClient {
 
-    @GET("search/")
+    @GET("search")
     Call<Restaurants> getRestaurantsByLocation(@Query("term") String term,@Query("location") String location
-            ,@Query("radius") double radius,@Query("sort_by") String sort_by,@Query("limit") int limit);
+            ,@Query("radius") int radius,@Query("sort_by") String sort_by,@Query("limit") int limit);
 
-    @GET("search/")
+    @GET("search")
     Call<Restaurants> getRestaurantsByLatLong(@Query("term") String term,@Query("latitude") double lat
-            ,@Query("longitude") double lon,@Query("radius") int radius,@Query("sort_by") String sort_by,@Query("limit") int limit);
+            ,@Query("longitude") int lon,@Query("radius") int radius,@Query("sort_by") String sort_by,@Query("limit") int limit);
 
+    @GET("search")
+    Call<Restaurants> getRestaurantsByLocationWithoutLimit(@Query("term") String term,@Query("location") String location
+            ,@Query("radius") int radius,@Query("sort_by") String sort_by);
 }

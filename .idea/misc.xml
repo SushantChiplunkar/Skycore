@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Susha/AndroidStudioProjects/Skycore/app/src/main/res/drawable/circle_bg.xml" value="0.121" />
         <entry key="..\:/Users/Susha/AndroidStudioProjects/Skycore/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Susha/AndroidStudioProjects/Skycore/app/src/main/res/layout/list_row.xml" value="0.2105978260869565" />
       </map>
     </option>
   </component>

@@ -3,19 +3,38 @@ package com.sushantc.skycore.model;
 
 import android.os.Parcelable;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 
 public class Location implements Parcelable
 {
 
+    @SerializedName("address1")
+    @Expose
     private String address1;
+    @SerializedName("address2")
+    @Expose
     private String address2;
-    private String address3;
+    @SerializedName("address3")
+    @Expose
+    private Object address3;
+    @SerializedName("city")
+    @Expose
     private String city;
+    @SerializedName("zip_code")
+    @Expose
     private String zipCode;
+    @SerializedName("country")
+    @Expose
     private String country;
+    @SerializedName("state")
+    @Expose
     private String state;
+    @SerializedName("display_address")
+    @Expose
     private List<String> displayAddress = null;
     public final static Creator<Location> CREATOR = new Creator<Location>() {
 
@@ -37,12 +56,12 @@ public class Location implements Parcelable
     protected Location(android.os.Parcel in) {
         this.address1 = ((String) in.readValue((String.class.getClassLoader())));
         this.address2 = ((String) in.readValue((String.class.getClassLoader())));
-        this.address3 = ((String) in.readValue((String.class.getClassLoader())));
+        this.address3 = ((Object) in.readValue((Object.class.getClassLoader())));
         this.city = ((String) in.readValue((String.class.getClassLoader())));
         this.zipCode = ((String) in.readValue((String.class.getClassLoader())));
         this.country = ((String) in.readValue((String.class.getClassLoader())));
         this.state = ((String) in.readValue((String.class.getClassLoader())));
-        in.readList(this.displayAddress, (String.class.getClassLoader()));
+        in.readList(this.displayAddress, (java.lang.String.class.getClassLoader()));
     }
 
     public Location() {
@@ -64,11 +83,11 @@ public class Location implements Parcelable
         this.address2 = address2;
     }
 
-    public String getAddress3() {
+    public Object getAddress3() {
         return address3;
     }
 
-    public void setAddress3(String address3) {
+    public void setAddress3(Object address3) {
         this.address3 = address3;
     }
 

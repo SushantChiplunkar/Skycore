@@ -2,6 +2,7 @@ package com.sushantc.skycore.api;
 
 import com.sushantc.skycore.interceptor.ErrorHandlingInterceptor;
 import com.sushantc.skycore.interceptor.ServiceInterceptor;
+import com.sushantc.skycore.interceptor.ServiceInterceptorAuth;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -24,7 +25,7 @@ public class ServiceGenerator {
     public static <S> S createService(
             Class<S> serviceClass) {
         httpClient.addInterceptor(new ErrorHandlingInterceptor());
-        httpClient.addInterceptor(new ServiceInterceptor());
+        httpClient.addInterceptor(new ServiceInterceptorAuth());
         builder.client(httpClient.build());
         retrofit = builder.build();
         return retrofit.create(serviceClass);

@@ -3,27 +3,62 @@ package com.sushantc.skycore.model;
 
 import android.os.Parcelable;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 
 public class Business implements Parcelable
 {
 
+    @SerializedName("id")
+    @Expose
     private String id;
+    @SerializedName("alias")
+    @Expose
     private String alias;
+    @SerializedName("name")
+    @Expose
     private String name;
+    @SerializedName("image_url")
+    @Expose
     private String imageUrl;
+    @SerializedName("is_closed")
+    @Expose
     private Boolean isClosed;
+    @SerializedName("url")
+    @Expose
     private String url;
+    @SerializedName("review_count")
+    @Expose
     private Integer reviewCount;
+    @SerializedName("categories")
+    @Expose
     private List<Category> categories = null;
+    @SerializedName("rating")
+    @Expose
     private Float rating;
+    @SerializedName("coordinates")
+    @Expose
     private Coordinates coordinates;
+    @SerializedName("transactions")
+    @Expose
     private List<Object> transactions = null;
+    @SerializedName("price")
+    @Expose
     private String price;
+    @SerializedName("location")
+    @Expose
     private Location location;
+    @SerializedName("phone")
+    @Expose
     private String phone;
+    @SerializedName("display_phone")
+    @Expose
     private String displayPhone;
+    @SerializedName("distance")
+    @Expose
     private Float distance;
     public final static Creator<Business> CREATOR = new Creator<Business>() {
 
@@ -50,10 +85,10 @@ public class Business implements Parcelable
         this.isClosed = ((Boolean) in.readValue((Boolean.class.getClassLoader())));
         this.url = ((String) in.readValue((String.class.getClassLoader())));
         this.reviewCount = ((Integer) in.readValue((Integer.class.getClassLoader())));
-        in.readList(this.categories, (Category.class.getClassLoader()));
+        in.readList(this.categories, (com.sushantc.skycore.model.Category.class.getClassLoader()));
         this.rating = ((Float) in.readValue((Float.class.getClassLoader())));
         this.coordinates = ((Coordinates) in.readValue((Coordinates.class.getClassLoader())));
-        in.readList(this.transactions, (Object.class.getClassLoader()));
+        in.readList(this.transactions, (java.lang.Object.class.getClassLoader()));
         this.price = ((String) in.readValue((String.class.getClassLoader())));
         this.location = ((Location) in.readValue((Location.class.getClassLoader())));
         this.phone = ((String) in.readValue((String.class.getClassLoader())));
